@@ -27,7 +27,7 @@ def lambda_handler(event, context):
         
         # Upload the zip file to S3
         s3_client = boto3.client('s3')
-        s3_client.upload_file('python_package.zip', bucket_name, object_key)
+        s3_client.upload_file('/tmp/python_package.zip', bucket_name, object_key)
 
         return {
             'statusCode': 200,
